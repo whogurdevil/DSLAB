@@ -12,7 +12,7 @@ int indexof(int arr[], int size, int value){
     return 0;
 }
 
-int size = 0;
+
 
 int main(){
     
@@ -22,6 +22,7 @@ int main(){
     int pos = 0;
 
     int option;
+    int size = 0;
 
     menu:
     while(true){
@@ -54,6 +55,7 @@ int main(){
             }
 
             cout << "Array created successfully"<< endl;
+            system("pause");
             break;
 
             case 2:
@@ -104,6 +106,8 @@ int main(){
                 }
             }
 
+            delete[] arr;
+
             arr = temp;
             size ++;
 
@@ -132,6 +136,8 @@ int main(){
                     temp[i] = arr[i+1];
                 }
             }
+
+            delete[] arr;
 
             arr = temp;
             size --;
