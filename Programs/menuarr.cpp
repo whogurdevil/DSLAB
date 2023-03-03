@@ -120,11 +120,8 @@ int main(){
 
             system("cls");
 
-            cout << "Enter element to be deleted: ";
-            int del;
-            cin >> del;
-
-            pos = indexof(arr, size, del);
+            cout << "Enter index to be deleted: ";
+            cin >> pos;
 
             temp = new int[size - 1];
 
