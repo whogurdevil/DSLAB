@@ -18,24 +18,21 @@ class Stack{
         this->arr = new int[max];
     }
     Stack(const Stack &s){
-    this->top = s.top;
-    this->max = s.max;
-    this->arr = new int[max];
-    for(int i = 0; i <= top; i++){
-        arr[i] = s.arr[i];
+        this->top = s.top;
+        this->max = s.max;
+        this->arr = new int[max];
+        for(int i = 0; i <= top; i++){
+            arr[i] = s.arr[i];
+        }
     }
-}
 
 
     void create(){
         cout << "Enter max size of the stack: ";
         cin >> max;
         arr = new int[max];
-        cout << "Array created successfuly" << endl;
+        cout << "Array created successfully" << endl;
     }
-    // void create(int size){
-    //     arr = new int[size];
-    // }
 
     bool push(int temp){
         if (arr == NULL) {
@@ -95,33 +92,35 @@ class Stack{
         return (this->top+1);
     }
     void isPalindrome(){
-    if(top == -1 || top == 0){
-        cout << "Stack is palindrome" << endl;
-        return;
-    }
-    this->print();
-    Stack temp1 = *(this);
-    Stack temp2(temp1.getLength());
-    for(int i = 0; i <= temp1.getLength()/2; i++){
-        temp2.push(temp1.pop());
-
-    }
-    // ignore the middle element if odd length
-    if(temp1.getLength() % 2 != 0){
-    temp2.pop();
-    }
-    
-    //palindrome checking
-    while(temp1.notEmpty() || temp2.notEmpty()){
-        int x = temp1.pop();
-        int y = temp2.pop();
-        if(x != y){
-            cout << "Not a palindrome" << endl;
+        if(top == -1 || top == 0){
+            cout << "Stack is palindrome" << endl;
             return;
         }
-    }
-    
-    cout << "Is a palindrome" << endl;
+        this->print();
+
+        //copy st constructor to temp
+        Stack temp1 = *(this);
+        Stack temp2(temp1.getLength());
+        for(int i = 0; i <= temp1.getLength()/2; i++){
+            temp2.push(temp1.pop());
+
+        }
+        // ignore the middle element if odd length
+        if(temp1.getLength() % 2 != 0){
+            temp2.pop();
+        }
+        
+        //palindrome checking
+        while(temp1.notEmpty() || temp2.notEmpty()){
+            int x = temp1.pop(); 
+            int y = temp2.pop();
+            if(x != y){
+                cout << "Stack is not in palindrome form" << endl;
+                return;
+            }
+        }
+        
+        cout << "Stack is in palindrome form" << endl;
     }
 };
 
@@ -141,7 +140,7 @@ int main(){
         cout << "4. Show status\n";
         cout << "5. Check weather the entered elements form a palindrome or not\n";
         cout << "6. Exit\n";
-        cout << "Select an option to operate....";
+        cout << "Select an option to operate.... ";
 
 
         cin >> option;
@@ -162,7 +161,7 @@ int main(){
             int temp;
             cin >> temp;
             if(st.push(temp)){
-                cout << temp << " pushed successfuly" << endl;
+                cout << temp << " pushed successfully" << endl;
             }
             else{
                 cout << temp << " not pushed!!!" << endl;
@@ -175,7 +174,7 @@ int main(){
             case 3:
             system("cls");
             st.pop();
-            cout << "Last Element poped out successfully" << endl;
+            cout << "Last Element pop out successfully" << endl;
             system("pause");
             system("cls");
 
@@ -211,5 +210,5 @@ int main(){
 
         }
     }
-return 0;
+    return 0;
 }
