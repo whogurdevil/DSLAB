@@ -18,7 +18,7 @@ class Node
         cout << "Enter name: ";
         cin >> this->name;
         cout << "Enter branch: ";
-        cin >> this->branch;
+        cin >> this->branch;mmm
         cout << "Enter sem(numeral): ";
         cin >> this->sem;
         cout << "Enter phone number: ";
