@@ -23,8 +23,6 @@ class Node
         cin >> this->sem;
         cout << "Enter phone number: ";
         cin >> this->phone;
-
-        // count++;
     }
 
     ~Node() {
